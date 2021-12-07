@@ -1,0 +1,6 @@
+/vendor
+/old
+composer.lock
+.env
+Archive.zip
+__MACOSX/
