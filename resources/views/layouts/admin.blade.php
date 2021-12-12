@@ -1007,14 +1007,13 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
    <script type="text/javascript">
     
-    $(document).ready(function(){
-        
-        $('.table').dataTable();
-    })
+//    $(document).ready(function(){
+//        $('table').dataTable();
+//    });
     </script>
     
     @yield('js')
