@@ -48,19 +48,25 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                                     </div>
+                                    
+                                    <div class="form-group">
+                                    <label for="userRole">Select user role</label>
+                                    <select class="form-control" id="userRole" name="userRole">
+                                      <option value="" selected disabled>Select Role</option>
+                                      <option value="client">Client</option>
+                                      <option value="mobilerotary">Mobile Notary</option>
+                                      <option value="processserver">Process Server</option>
+                                      
+
+                                    </select>
+                                  </div>
+                                    
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        {{ __('Register') }}
+                                    </button>
 
 
-                                      <div class="form-group">
-                                        <label for="userRole">Select user role</label>
-                                        <select class="form-control" id="userRole" name="userRole">
-                                          <option value="" selected disabled>Select Role</option>
-                                          <option value="client">Client</option>
-                                          <option value="mobilerotary">Mobile Notary</option>
-                                          <option value="processserver">Process Server</option>
-                                          <option value="staff">Staff</option>
-                                          
-                                        </select>
-                                      </div>
+                                  
 
 
                                     
@@ -70,13 +76,14 @@
                         </div>
 
 
+<!--
                         <div class="col-lg-6">
                             
 
                             <div class="card-body mt-5">
 
 
-                                <!--<form method="POST" action="{{ route('profile.business_update') }}" autocomplete="off">-->
+                                <form method="POST" action="{{ route('profile.business_update') }}" autocomplete="off">
 
 
 
@@ -179,6 +186,7 @@
 
                             </div>
                         </div>
+-->
 
                     </div>
                                 </form>

@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
+
 
 use DB;
 
@@ -61,7 +63,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
 
-            'contact_first_name' => ['required', 'string', 'max:255'],
+//            'contact_first_name' => ['required', 'string', 'max:255'],
 
         ]);
     }
@@ -75,26 +77,21 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-      //  dd($data);
+//        dd($data);
         $user = User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-
-            'contact_first_name' => $data['contact_first_name'],
-            'contact_last_name' => $data['contact_last_name'],
-            'contact_email_address' => $data['contact_email_address'],
-            'contact_telephone_number' => $data['contact_telephone_number'],
-            'contact_mailing_address' => $data['contact_mailing_address'],
-            'company_name' => $data['company_name'],
-            'contact_fax_number' => $data['contact_fax_number'],
-            'cheque_payable_to' => $data['cheque_payable_to'],
+            'status' => 0,
 
         ]);
+        
+//        dd($user);
 
 
         $getRole = DB::table('roles')->where('role_name', $data['userRole'])->first()->role_id;
+
 
         DB::table('roles_connect')->insert([
             ['user_id' => $user->id, 'role_id' => $getRole]
@@ -108,10 +105,12 @@ class RegisterController extends Controller
 
         Mail::to($data['email'])->send(new NewMemberMail($mailData));
     
-
-
-
-        return $user;
+       if($user->status != 1){
+            throw ValidationException::withMessages([
+            $user->name => ["Sorry, you can not login at the moment. An Admin will varify your request. ."],
+        ]);
+       }
 
     }
+        
 }
