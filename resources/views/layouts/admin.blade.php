@@ -22,12 +22,16 @@
     <!-- Favicon -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
     <!-- Scripts -->
     <script src="{{ asset('js/script.js') }}" defer></script>
 
 
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+
 
     @yield('css')
 
@@ -1003,7 +1007,16 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
 
+   <script type="text/javascript">
+    
+    $(document).ready(function(){
+        
+        $('.table').dataTable();
+    })
+    </script>
+    
     @yield('js')
 
 </body>

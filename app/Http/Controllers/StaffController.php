@@ -395,7 +395,7 @@ class StaffController extends Controller
             ->select('users.*', 'roles_connect.role_id')
             ->get();
 
-          //  dd($members);
+//            dd($members);
 
         return view('staffs.members.all_members')->withMembers($members);
 

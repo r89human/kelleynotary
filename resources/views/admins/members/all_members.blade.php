@@ -19,6 +19,7 @@
             
 
           <table class="table table-bordered">
+           <thead>
             <tr class="thead-light">
               <th>First Name</th>
               <th>Last Name</th>
@@ -36,6 +37,8 @@
 
 
             </tr>
+            </thead>
+            <tbody>
 
             @foreach($members as $member)
 
@@ -406,6 +409,7 @@
                 @endif
 
               </tr>
+              </tbody>
 
             @endforeach
           </table>

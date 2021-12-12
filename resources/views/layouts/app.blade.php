@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
     <script src="{{ asset('js/script.js') }}" defer></script>
 
@@ -20,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -78,5 +80,11 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript">
+        console.log("here"); 
+        $(document).ready(function(){
+           console.log("here"); 
+        });
+    </script>
 </body>
 </html>
