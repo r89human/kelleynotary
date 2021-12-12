@@ -1,4 +1,5 @@
 /vendor
+/storage/logs/laravel.log
 /old
 composer.lock
 .env

@@ -506,13 +506,13 @@ class AdminController extends Controller
             return redirect()->back();
         }
 
-		$members = DB::table('users')
+		$members = DB::table('users')->orderBy('created_at', 'desc')
             ->join('roles_connect', 'users.id', '=', 'roles_connect.user_id')
             ->where('roles_connect.role_id', Self::getMemberType($role))
             ->select('users.*', 'roles_connect.role_id')
             ->get();
 
-          //  dd($members);
+//            dd($members);
 
         return view('admins.members.all_members')->withMembers($members);
 
