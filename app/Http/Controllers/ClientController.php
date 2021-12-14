@@ -219,6 +219,8 @@ class ClientController extends Controller
         $realStateClosing->first_signers_name					 = $request->first_signers_name;
         $realStateClosing->second_signers_name					 = $request->second_signers_name;
         $realStateClosing->telephone_number					 = $request->telephone_number;
+        $realStateClosing->company_name					 = $request->company_name;
+        $realStateClosing->fax_number					 = $request->fax_number;
         $realStateClosing->telephone_number_2					 = $request->telephone_number_2;
         $realStateClosing->address					 			 = $request->address;
         $realStateClosing->city					 			 = $request->city;

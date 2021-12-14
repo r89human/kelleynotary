@@ -124,6 +124,22 @@
                       </div>
                     </div>
                   </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="telephonenumber">Company Name</label>
+                        <input type="text" class="form-control" id="companyname" name="company_name" required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="telephonenumber2">Fax Number</label>
+                        <input type="text" class="form-control" id="faxnumber" name="fax_number">
+                      </div>
+                    </div>
+                  </div>
 
 
 
