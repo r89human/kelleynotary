@@ -33,6 +33,9 @@
               <th>Closing Type</th>
               <th>Fax Backs</th>
               <th>City</th>
+              <th>Company Name</th>
+              <th>Fax</th>
+              <th>City</th>
               <th>State</th>
               <th>Zip</th>
               <th>Status</th>
@@ -50,6 +53,8 @@
                 <td>{{$data->select_closing_type}}</td>
                 <td>{{$data->fax_backs}}</td>
                 <td>{{$data->city}}</td>
+                <td>{{$data->company_name}}</td>
+                <td>{{$data->fax_number}}</td>
                 <td>{{$data->state}}</td>
                 <td>{{$data->zip}}</td>
                 <td>

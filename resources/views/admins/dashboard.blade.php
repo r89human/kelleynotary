@@ -194,7 +194,9 @@
                     <tr>
                         <td>{{$getAssignmentData->getInvoiceData($invoice->assignment_type, $invoice->assignment_hash, 'assignment_title')}}</td>
                         <td>
-                            <a href="{{ route('admins.show.member.invoices', ['client', $invoice->invoice_to]) }}">{{App\User::find($invoice->invoice_to)->name}}</a>
+                            <a href="{{ route('admins.show.member.invoices', ['client', $invoice->invoice_to]) }}">
+                            @if(App\User::find($invoice->invoice_to)){{ App\User::find($invoice->invoice_to)->name}} @endif
+                            </a>
                         </td>
                         <td>
                           {{ date('M d, Y', strtotime($getAssignmentData->getInvoiceData($invoice->assignment_type, $invoice->assignment_hash, 'date_of_assignment')))}}
