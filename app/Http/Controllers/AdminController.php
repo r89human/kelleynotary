@@ -500,9 +500,25 @@ class AdminController extends Controller
 
 
         if($req->uid && ($req->do == 0 || $req->do ==1)){
+           
+            
+            if($req->uid && ($req->delete == 1)){
+            
+            DB::table('roles_connect')->where('user_id',$req->uid)->delete();
+                $udata = User::find($req->uid)->delete();
+                return redirect()->back();
+            }
+            
             $udata = User::find($req->uid);
             $udata->status = $req->do;
             $udata->save();
+            return redirect()->back();
+        }
+        
+        if($req->uid && ($req->delete == 1)){
+            dd("here");
+            DB::table('roles_connect')->where('user_id',$req->uid)->delete();
+            $udata = User::find($req->uid)->delete();
             return redirect()->back();
         }
 

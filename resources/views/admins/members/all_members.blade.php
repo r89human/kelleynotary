@@ -66,9 +66,10 @@
                 </td>
                 <td>
                     @if($member->status == 0)
-                     <a onclick="return confirm('Are you sure you want to active this user account status?');" href="/admin/members/{{request()->segment(3)}}?uid={{$member->id}}&do=1" class="btn btn-link" style="color:green">Active now</a>
+                     <a onclick="return confirm('Are you sure you want to active this user account status?');" href="/admin/members/{{request()->segment(3)}}?uid={{$member->id}}&do=1" class="btn btn-link" style="color:green">Activate</a>
+                     <a onclick="return confirm('Are you sure you want to delete this user account?');" href="/admin/members/{{request()->segment(3)}}?uid={{$member->id}}&delete=1" class="btn btn-link" style="color:green">Delete</a>
                     @elseif($member->status == 1)
-                     <a onclick="return confirm('Are you sure you want to inactive this user account status?');" href="/admin/members/{{request()->segment(3)}}?uid={{$member->id}}&do=0" class="btn btn-link" style="color:red">Inactive now</a>
+                     <a onclick="return confirm('Are you sure you want to inactive this user account status?');" href="/admin/members/{{request()->segment(3)}}?uid={{$member->id}}&do=0" class="btn btn-link" style="color:red">Block</a>
                     @endif
 
                     @if(request()->segment(3) == 'client')
@@ -85,10 +86,6 @@
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#viewProfile{{$member->id}}">
                           View Profile
                         </button>
-
-
-
-
                         <!-- Modal -->
                         <div class="modal fade" id="viewProfile{{$member->id}}" tabindex="-1" role="dialog" aria-labelledby="viewProfile{{$member->id}}Label" aria-hidden="true">
                           <div class="modal-dialog" role="document">
